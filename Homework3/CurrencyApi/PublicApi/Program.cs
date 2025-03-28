@@ -1,9 +1,8 @@
 using Fuse8.BackendInternship.PublicApi;
-using Microsoft.AspNetCore;
 
-var webHost = WebHost
+var webHost = Host
 	.CreateDefaultBuilder(args)
-	.UseStartup<Startup>()
+	.ConfigureWebHostDefaults(webHostBuilder => webHostBuilder.UseStartup<Startup>())
 	.Build();
 
 await webHost.RunAsync();
