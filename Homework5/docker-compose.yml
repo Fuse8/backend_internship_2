@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:17.4
+    restart: unless-stopped
+    environment:
+      DATABASE_HOST: 127.0.0.1
+      POSTGRES_USER: someUser
+      POSTGRES_PASSWORD: P@ssw0rd
+      POSTGRES_DB: fuse8Internship
+    ports:
+      - "5432:5432"
+    volumes:
+       - /DockerData/postgres/data:/var/lib/postgresql/data
